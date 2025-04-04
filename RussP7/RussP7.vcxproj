@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Astrology.cpp" />
     <ClCompile Include="Driver.cpp" />
+    <ClCompile Include="FindCompatiableSign.cpp" />
     <ClCompile Include="FindMySign.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -2,10 +2,7 @@
 #include <sstream>
 void WriteHeader()
 {
-
     cout << "This program will tell you, your astrology sign and who you are most compatible with\n\n";
-
-
 }
 
 void WriteIntro()
@@ -14,8 +11,6 @@ void WriteIntro()
         << "After that it will tell you one of twelve signs and one of the four corresponding elements"
         << "It will also tell you what sign you are most compatble with\n\n.";
 }
-
-
 
 void AskForNameAndBirthday(MyChart& astro)
 {
@@ -53,33 +48,24 @@ bool ValidateBirthday(MyChart& astro)
    }
 
     
-
+   //could use a list so its not a full sentence, % operator,
   if (astro.month == 1 || astro.month == 3 || astro.month == 5 || astro.month == 7 || astro.month == 8 || astro.month == 10 || astro.month == 12) {//31 days
-        
-        
+         
      if (astro.day < 1 || astro.day>31) {
 
         cout << "Invalid day for month.";
      }
         
         
-        
-        
   }
 
 
-        
-
-   if (astro.month == 4 || astro.month == 6 || astro.month == 9 || astro.month == 11) {//30 days
-        
+   if (astro.month == 4 || astro.month == 6 || astro.month == 9 || astro.month == 11) {//30 days 
         
       if (astro.day < 1 || astro.day>30) {
 
          cout << "Invalid day for month.";
       }
-        
-        
-        
         
    }
     
@@ -137,158 +123,6 @@ void FillHoroscopes(AstrologyData& data)
     data.horoscopes[3] = "\nPisces. People come to you asking to let them disclose information to you, and you're more than happy to oblige\n";
 }
 
-
-
-void FindCompatibleSigns(MyChart& astro)//time stamp in video 37minutes
-{
-    //#########################################
-
-    //you might be able to change them to if and else statements to make it run faster
-
-   //###########################################
-
-
-    int month{ astro.month };
-    int day{ astro.day };
- 
-    
-  //Find myElement
-  //get the other two signs in that element and assign them to the compatible signs
-
-    if (month ==1 && day<=19) { // Capricorn
-
-        astro.mySign =1;
-        astro.myElement = 2;
-        cout << "\n\nYour element is earth.  Your compatiable signs are Capricorn, Taurus, and Virgo.";
-
-    }
-
-
-
-
-    if (month == 1 && day > 19 || month == 2 && day <= 18) {//aqurius
-
-        astro.mySign = 2;
-        astro.myElement = 3;
-       
-        cout << "\n\nyour element is air. Your compatiable signs are Gemini, Libra, Aquarius.";
-    }
-   
-
-
-    if (month == 2 && day > 18 || month==3 && day <= 20){//Pisces              
-        
-        astro.mySign = 3;
-        astro.myElement = 4;
-        cout << "\n\nyour element is water.  Your compatiable signs are Pisces, Cancer and Scorpio.";
-
-    }
-
-
-
-
-    if (month == 3 && day >20 || month==4 && day <= 19){ //Aries 
-
-        astro.mySign = 4;
-
-        astro.myElement = 1;
-        cout << "\n\nyour element is fire. Your compatiable signs are Aries, Leo and Sagittarius.";
-    
-    }
-
-
-
-
-    if (month == 4 && day > 20 || month == 5 && day <= 20) {//tarus
-
-        astro.mySign = 5;
-        astro.myElement = 2;
-        cout << "\n\nYour element is earth.  Your compatiable signs are Capricorn, Taurus, and Virgo.";
-
-    }
-
-
-
-
-    if (month == 5 && day > 20 || month == 6 && day <= 21) {//Gemini
-
-        astro.mySign = 6;
-        astro.myElement = 3;
-         cout << "\n\nyour element is air. Your compatiable signs are Gemini, Libra, Aquarius.";
-
-    }
-
-
-    if (month == 6 && day > 21 || month == 7 && day <= 22) {//cancer
-
-        astro.mySign = 7;
-        astro.myElement = 4;
-        cout << "\n\nyour element is water.  Your compatiable signs are Pisces, Cancer and Scorpio.";
-
-    }
-
-
-    if (month == 7 && day > 22 || month == 8 && day <= 22) {//Leo
-
-        astro.mySign = 8;
-        astro.myElement = 1;
-
-        cout<<"\n\nyour element is fire. Your compatiable signs are Aries, Leo and Sagittarius.";
-
-    }
-
-
-
-    if(month==8 && day>22||month==9 && day<=22){//Virgo
-
-   
-        astro.mySign = 9;
-        astro.myElement = 2;
-         cout << "\n\nYour element is earth.  Your compatiable signs are Capricorn, Taurus, and Virgo.";
-
-    }
-
-
-
-    if (month == 9 && day > 22 || month == 10 && day <= 22) {//Libra
-        astro.mySign = 10;
-        astro.myElement = 3;
-        cout << "\n\nyour element is air. Your compatiable signs are Gemini, Libra, Aquarius.";
-
-    }
-
-
-
-
-
-    if (month == 10 && day > 22 || month == 11 && day <= 21) {//Scorpio
-        astro.mySign = 11;
-        astro.myElement = 4;
-        cout << "\n\nyour element is water.  Your compatiable signs are Pisces, Cancer and Scorpio.";
-    }
-
-
-
-
-
-    if ( month==11 && day >21||month == 12 && day<=21  ) {//Sagittarus
-    
-        astro.mySign = 12;
-        astro.myElement = 2;
-        cout << "\n\nYour element is earth. Your compatiable signs are Aries, Leo and Sagittarius.";
-    }
-
-
-
-   
-}
-
-
-
-
-
-
-
 bool WriteHoroscope(MyChart& astro, AstrologyData& data, string* filename, string* results)
 {
   //ask for file name for their report.  Tell them if they should put .txt on the end
@@ -299,8 +133,6 @@ bool WriteHoroscope(MyChart& astro, AstrologyData& data, string* filename, strin
     
 
     if (myFile.is_open()){ //open the file
-
-        //create a string stream of the results
          
         //Tell the user their input, sign hororscope, and their compatiable signs
         
