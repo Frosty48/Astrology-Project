@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Astrology.h"
+#include "FindMySign.cpp"
 using namespace std;
 
 int main()
