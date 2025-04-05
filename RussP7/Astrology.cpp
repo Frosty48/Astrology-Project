@@ -1,4 +1,6 @@
 #include "Astrology.h"
+#include "Astrology.h"
+#include "FindMySign.cpp"
 #include <sstream>
 void WriteHeader()
 {
